@@ -1,0 +1,18 @@
+
+{% extends 'app_transporte/base.html' %}
+
+{% block conteudo %}
+        <div class="alert alert-success" role="alert" style="width: 50rem;">
+        <h1>Detalhe da Solicitação Aberta</h1>
+        <div class="container">
+        <div class="row">
+        <div class="card" style="width: 50rem;">
+        <h5><p>Origem: {{ detalhesolicitacao.origem}}<br></p>
+        <p>Destino: {{ detalhesolicitacao.destino }}</p>
+        <p>Data e Hora: {{ detalhesolicitacao.data_hora }}</p>
+        <p>Solicitante: {{ detalhesolicitacao.solicitante.nome }}</p></h5>
+        </div>
+        </div>
+        </div>
+        </div>
+{% endblock %}

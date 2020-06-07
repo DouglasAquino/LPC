@@ -1,0 +1,23 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todas as Notiticas</title>
+  </head>
+    <body>
+    {% if user.is_authenticated  %}
+      Olá {{ user.username }} seja bem vindo. <a href="{% url 'logout' %}">Sair so sistema</a>
+    {% else %}
+      <a href="{% url 'login' %}">Entrar no sistema</a>
+    {% endif %}
+        <h1>Todas as Noticias</h1>
+
+        <ul>
+            {% for noticia in todas_noticias %}
+                <li><a href='detalhe/{{ noticia.id }}'> {{ noticia.titulo }} <a/></li>
+
+            {% endfor %}
+    </ul>
+    </body>
+</html>
+

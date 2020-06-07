@@ -1,0 +1,22 @@
+
+<html lang='pt-br'>
+ 
+    <head>
+        <meta charset='utf-8'>
+
+        <title>Detalhes de noticias</title>
+    </head>
+
+    <body>
+        <h1>{{ noticia.titulo }}</h1>
+        <p>{{ noticia.conteudo}}<br></p>
+        <p>{{ noticia.autor.nome }}</p>
+
+        {% for item in noticia.tags.all %}
+            <p> {{ item.nome }}</p>
+
+        {% endfor %}
+    </body>
+
+
+</html>

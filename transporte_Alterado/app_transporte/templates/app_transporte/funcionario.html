@@ -1,0 +1,18 @@
+
+{% extends 'app_transporte/base.html' %}
+
+{% block conteudo %}
+    <h1>Todos os Funcionários</h1>
+    <div class="container">
+    <div class="row">
+    <div class="col-sm">
+        {% for funcionario in todo_funcionario %}
+            <p>Nome: <a href='detalhe_funcionario/{{ funcionario.id }}'>{{ funcionario.nome }}<a/>
+            Departamento: {{ funcionario.departamento.nome }}
+            Cargo: {{ funcionario.cargo.nome }} </p>
+
+        {% endfor %}
+    </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+
+{% extends 'app_transporte/base.html' %}
+{% block conteudo %}
+
+    <div class="alert alert-success" role="alert" style="width: 50rem;">
+    {% if funcionario.cargo.nome == 'Chefe' %}
+        <h2>Solicitações que você realizou</h2>
+    {% elif funcionario.departamento.nome == 'Transporte' %}
+        <h2>Solicitações que estão esperando atendimento</h2>
+    {% endif %}
+
+    <div class="container">
+    <div class="row">
+    
+    {% for solicitacao in todas_solicitacao %}
+    <div class="card" style="width: 50rem;">
+        <ul class="list-group list-group-flush">
+
+            <p> Solicitante:<a class="text-warning"href='solicitacao/{{ solicitacao.id }}'>
+            {{ solicitacao.solicitante.nome }}<a/>
+            Data e Hora: {{ solicitacao.data_hora }} </p>
+
+        </u>
+    </div>
+    {% endfor %}
+    
+
+    {% if funcionario.cargo.nome == 'Chefe' %}
+            <h5>Para cadastrar uma solicitação 
+            <a href="{% url 'cadastrar_solicitacao' %}">Cadastrar solicitação</a></h5>
+         
+    {% elif funcionario.departamento.nome == 'Transporte' %}
+            <h5>Para realizar um atendimento
+            <a href="{% url 'cadastrar_atendimento' %}">Realizar Atendimento</a></h5>
+    {% endif %}
+
+    
+    </div>
+    </div>
+    </div>
+    
+{% endblock %}

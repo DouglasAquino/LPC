@@ -1,0 +1,10 @@
+{% extends 'app_transporte/base.html' %}
+
+{% block conteudo %}
+        <h1>Detalhe do Funcionário</h1>
+        <p>Nome: {{ detalhefuncionario.nome}}<br></p>
+        <p>Matricula: {{ detalhefuncionario.matricula }}</p>
+        <p>Departamneto: {{ detalhefuncionario.departamento.nome }}</p>
+        <p>Cargo: {{ detalhefuncionario.cargo.nome }}</p>
+        <p>
+{% endblock %}
