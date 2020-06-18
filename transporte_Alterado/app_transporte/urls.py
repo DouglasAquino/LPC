@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import todas_solicitacoes, detalhe_solicitacao, detalhe_carro, todos_carros, detalhe_funcionario, todos_funcionarios, CadastrarView, AtendimentoView
+from .views import todas_solicitacoes, detalhe_solicitacao, detalhe_carro,todos_carros, detalhe_funcionario, todos_funcionarios, CadastrarView, AtendimentoView
 urlpatterns = [
     path('solicitacao', todas_solicitacoes, name='inicio_solicitacao'),
     path('solicitacao/<int:datalheSolicitacao_id>/', detalhe_solicitacao, name='detalhe_solicitacao'),
